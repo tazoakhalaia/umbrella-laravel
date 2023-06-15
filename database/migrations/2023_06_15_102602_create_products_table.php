@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('desc');
-            // $table->json('img');
+            $table->string('img');
+            $table->string('price');
+            $table->string('category');
             $table->timestamps();
         });
     }
