@@ -16,4 +16,7 @@ Route::controller(ProductController::class)->group(function(){
     Route::delete('/products/{id}', 'destroy')->name('product.destory');
 });
 
-Route::post('/category', [CreateCategoryController::class, 'store'])->name('category.store');
+Route::controller(CreateCategoryController::class)->group(function(){
+    Route::post('/category', 'store')->name('category.store');
+    Route::get('/cateogries', 'getCategory')->name('categories.get');
+});

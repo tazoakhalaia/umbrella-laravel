@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class CreateCategoryController extends Controller
 {
+
+    public function getCategory() : JsonResponse
+    {
+        $category = Category::all();
+        return response()->json($category);
+    }
+
     public function store(CategoryRequest $categoryRequest) : JsonResponse
     {
         $category = Category::create($categoryRequest->validated());
