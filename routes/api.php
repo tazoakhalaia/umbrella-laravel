@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CreateCategoryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -14,3 +15,5 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/products', 'getProducts')->name('product.get');
     Route::delete('/products/{id}', 'destroy')->name('product.destory');
 });
+
+Route::post('/category', [CreateCategoryController::class, 'store'])->name('category.store');
