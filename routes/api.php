@@ -18,5 +18,5 @@ Route::controller(ProductController::class)->group(function(){
 
 Route::controller(CreateCategoryController::class)->group(function(){
     Route::post('/category', 'store')->name('category.store');
-    Route::get('/cateogries', 'getCategory')->name('categories.get');
+    Route::get('/categories', 'getCategory')->name('categories.get');
 });
